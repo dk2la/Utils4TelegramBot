@@ -1,5 +1,5 @@
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup 
 import csv
 
 
@@ -17,10 +17,10 @@ courses_prog = []
 courses_uprv = []
 courses_mark = []
 
-
+# div class name = "m-course-name-link"
 def get_html(url, params=''):
     result = requests.get(url, headers=HEADERS)
-    return result
+    return result.text
 
 def get_all_links(html): 
     soup = BeautifulSoup(html.text, 'lxml')
